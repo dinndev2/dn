@@ -37,10 +37,75 @@ body {
   background-color: #1c1a1a;
 }
 
-.icon {
-  transition: transform 0.02s ease-in-out;
-  will-change: transform;
-  user-select: none;
+  .icon {
+    transition: transform 0.02s ease-in-out;
+    will-change: transform;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+.glass-background {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: saturate(180%) blur(30px);
+  -webkit-backdrop-filter: saturate(180%) blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 0.6px rgba(255, 255, 255, 0.5), 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ─── TOOLTIP BUBBLE ─── */
+.tooltip-bubble {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: saturate(180%) blur(30px);
+  -webkit-backdrop-filter: saturate(180%) blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 0.6px rgba(255, 255, 255, 0.5), 0 8px 16px rgba(0, 0, 0, 0.2);
+  color: white;
+  opacity: 0;
+  left: 50%;
+  font-size: 9px;
+  transform: translateX(-50%) translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  z-index: 9999;
+  visibility: hidden;
+}
+
+.tooltip-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(255, 255, 255, 0.12);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.tooltip-bubble::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid rgba(255, 255, 255, 0.25);
+  margin-top: -1px;
+  z-index: -1;
+}
+
+.group:hover .tooltip-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 
@@ -50,9 +115,9 @@ body {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-
-  padding: 20px 40px;
-  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+  padding: 12px;
+  border-radius: 15px;
 
   background: rgba(255, 255, 255, 0.12); /* subtle milk tint */
   backdrop-filter: saturate(180%) blur(30px);
@@ -63,9 +128,7 @@ body {
   box-shadow:
     inset 0 0 0 0.6px rgba(255, 255, 255, 0.5), /* top sheen */
     0 20px 40px rgba(0, 0, 0, 0.25);           /* floating shadow */
-
-  display: flex;
-  align-items: center;
+  overflow: visible;
 }
 
 /* ─── ICONS ─── */
