@@ -31,50 +31,54 @@ export default function Bar() {
 
     const handleMouseLeave = () => {
       icons.forEach((icon) => (icon.style.transform = "scale(1)"));
+    };
+
+    const handleMouseLeaveDock = () => {
       dockWrapper.style.scale = `1`;
     };
 
     dock.addEventListener('mousemove', handleMouseMove);
     dock.addEventListener("mouseleave", handleMouseLeave);
     dockWrapper.addEventListener("mouseenter", handleMouseEnter);
-
+    dockWrapper.addEventListener("mouseleave", handleMouseLeaveDock);
     // Cleanup: remove event listeners when component unmounts
     return () => {
       dock.removeEventListener('mousemove', handleMouseMove);
       dock.removeEventListener("mouseleave", handleMouseLeave);
       dockWrapper.removeEventListener("mouseenter", handleMouseEnter);
+      dockWrapper.removeEventListener("mouseleave", handleMouseLeaveDock);
     };
   }, []);
   return (
     <div className="dock-wrapper">
-      <div id="dock" className="flex gap-10 relative items-center justify-center" style={{ overflow: 'visible' }}>
-        <a className="icon glass-background px-2 rounded-lg py-1 secondary-color fill-current h-10 w-10 relative group flex items-center justify-center" href="#">
-          <span className="tooltip-bubble absolute bottom-full mb-2 px-3 py-1.5 rounded-lg text-xs pointer-events-none whitespace-nowrap">
+      <div id="dock" className="flex gap-3 sm:gap-6 md:gap-8 lg:gap-10 relative items-center justify-center" style={{ overflow: 'visible' }}>
+        <a className="icon glass-background px-1.5 sm:px-2 rounded-lg py-0.5 sm:py-1 secondary-color fill-current h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10 relative group flex items-center justify-center" href="#">
+          <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             Projects
           </span>
           <Projects/>
         </a>
-        <a className="icon secondary-color fill-current h-8 w-8 relative group flex items-center justify-center" target="_blank" href="https://www.codewars.com/users/dinndev2">
-          <span className="tooltip-bubble absolute bottom-full mb-2 px-3 py-1.5 rounded-lg text-xs pointer-events-none whitespace-nowrap">
+        <a className="icon secondary-color fill-current h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative group flex items-center justify-center" target="_blank" href="https://www.codewars.com/users/dinndev2">
+          <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             CodeWars
           </span>
           <CodeWars/>
         </a>
-        <div className="w-1 rounded-full bg-gray-50 opacity-10 self-stretch"></div>
-        <a className="icon secondary-color fill-current h-8 w-8 relative group flex items-center justify-center" target="_blank" href="https://github.com/dinndev2">
-          <span className="tooltip-bubble absolute bottom-full mb-2 px-3 py-1.5 rounded-lg text-xs pointer-events-none whitespace-nowrap">
+        <div className="w-0.5 sm:w-1 rounded-full bg-gray-400 opacity-10 self-stretch"></div>
+        <a className="icon secondary-color fill-current h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative group flex items-center justify-center" target="_blank" href="https://github.com/dinndev2">
+          <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             Github
           </span>
           <Github/>
         </a>
-        <a className="icon secondary-color fill-current h-8 w-8 relative group flex items-center justify-center" target="_blank" href="https://www.linkedin.com/in/aladin-penagunda-17020a198/">
-          <span className="tooltip-bubble absolute bottom-full mb-2 px-3 py-1.5 rounded-lg text-xs pointer-events-none whitespace-nowrap">
+        <a className="icon secondary-color fill-current h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative group flex items-center justify-center" target="_blank" href="https://www.linkedin.com/in/aladin-penagunda-17020a198/">
+          <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             LinkedIn
           </span>
           <LinkedIn/>
         </a>
-        <a className="icon h-8 w-8 secondary-color fill-current relative group flex items-center justify-center" target="_blank" href="https://x.com/dinndev2">
-          <span className="tooltip-bubble absolute bottom-full mb-2 px-3 py-1.5 rounded-lg text-xs pointer-events-none whitespace-nowrap">
+        <a className="icon h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 secondary-color fill-current relative group flex items-center justify-center" target="_blank" href="https://x.com/dinndev2">
+          <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             X
           </span>
           <X/>

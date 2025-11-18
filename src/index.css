@@ -3,6 +3,7 @@
 :root {
   --primary-color: #6C9B88;
   --secondary-color: #ADA9A0;
+  --primary-text-color: #333333;
   line-height: 1.5;
   font-weight: 400;
 
@@ -21,7 +22,11 @@
 }
 
 .secondary-color {
-  color: white
+  color: var(--secondary-color);
+}
+
+.primary-text-color {
+  color: var(--primary-text-color);
 }
 
 .bg-secondary-color {
@@ -34,7 +39,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #1c1a1a;
+  background-color: #F5F5F5;
 }
 
   .icon {
@@ -62,7 +67,7 @@ body {
   -webkit-backdrop-filter: saturate(180%) blur(30px);
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: inset 0 0 0 0.6px rgba(255, 255, 255, 0.5), 0 8px 16px rgba(0, 0, 0, 0.2);
-  color: white;
+  color: var(--primary-text-color);
   opacity: 0;
   left: 50%;
   font-size: 9px;
@@ -112,12 +117,12 @@ body {
 /* ─── GLASS BACKGROUND FOR THE DOCK ─── */
 .dock-wrapper {
   position: fixed;
-  bottom: 20px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   transition: all 0.2s ease-in-out;
-  padding: 12px;
-  border-radius: 15px;
+  padding: 10px;
+  border-radius: 16px;
 
   background: rgba(255, 255, 255, 0.12); /* subtle milk tint */
   backdrop-filter: saturate(180%) blur(30px);
@@ -129,6 +134,25 @@ body {
     inset 0 0 0 0.6px rgba(255, 255, 255, 0.5), /* top sheen */
     0 20px 40px rgba(0, 0, 0, 0.25);           /* floating shadow */
   overflow: visible;
+  z-index: 1000;
+  width: fit-content;
+  max-width: calc(100% - 20px);
+}
+
+@media (min-width: 640px) {
+  .dock-wrapper {
+    bottom: 15px;
+    padding: 14px;
+    border-radius: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .dock-wrapper {
+    bottom: 20px;
+    padding: 17px;
+    border-radius: 20px;
+  }
 }
 
 /* ─── ICONS ─── */
