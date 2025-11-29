@@ -3,6 +3,7 @@ import './App.css'
 import Bar from './components/navigation/Bar'
 import Tab from './components/navigation/Tab'
 import MainContent from './components/MainContent'
+import Inventory from './components/inventory/Inventory'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
     <>
       <Tab/>
       <MainContent/>
+      <Inventory/>
       <Bar/>
     </>
   )

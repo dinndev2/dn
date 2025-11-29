@@ -51,7 +51,7 @@ export default function Bar() {
   }, []);
   return (
     <div className="dock-wrapper">
-      <div id="dock" className="flex gap-3 sm:gap-6 md:gap-8 lg:gap-10 relative items-center justify-center" style={{ overflow: 'visible' }}>
+      <div id="dock" className="flex gap-2 md:gap-4 lg:gap-6 relative items-center justify-center" style={{ overflow: 'visible' }}>
         <a className="icon glass-background px-1.5 sm:px-2 rounded-lg py-0.5 sm:py-1 secondary-color fill-current h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10 relative group flex items-center justify-center" href="#">
           <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             Projects

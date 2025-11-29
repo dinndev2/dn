@@ -33,6 +33,10 @@
   background-color: var(--secondary-color);
 }
 
+.bg-primary-color {
+  background-color: var(--primary-color);
+}
+
 body {
   margin: 0;
   display: flex;
@@ -156,3 +160,21 @@ body {
 }
 
 /* ─── ICONS ─── */
+
+
+.bg-landscape {
+  background-image: url('bg.png'); /* replace with your image */
+  background-size: cover;          /* ensures image always fills the screen */
+  background-position: center;     /* centers the image */
+  background-repeat: no-repeat;
+  filter: blur(5px);               /* adjust the blur intensity */
+  width: 100%;
+  height: 100%;
+  position: fixed;                 /* keeps it fixed behind content */
+  z-index: -1;                     /* send it behind content */
+}
+
+.bg-landscape-inventory {
+  position: relative;
+  overflow: hidden;
+}
