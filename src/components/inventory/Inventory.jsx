@@ -1,89 +1,112 @@
-import Figma from '../icons/Figma'
-import GithubSvg from '../icons/GithubSvg'
-import Javascript from '../icons/Javascript'
-import ReactSvg from '../icons/ReactSvg'
-import Tailwind from '../icons/Tailwind'
-import RubyOnRails from '../icons/RubyOnRails'
-import bgImage from '../../assets/images/bg.png'
-import meSvg from '../../assets/images/me.svg'
-import Tab from './Tab'
 import { useState } from 'react'
-
-const tileBaseClasses = "col-span-1 flex items-center justify-center text-white bg-black/30 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 ring-1 sm:ring-2 ring-inset p-1 sm:p-1.5 md:p-2 ring-gray-500 border sm:border-2 border-black/50"
-
-const inventoryItems = [
-  { id: 1, icon: <RubyOnRails /> },
-  { id: 2, icon: <ReactSvg /> },
-  { id: 3, icon: <GithubSvg /> },
-  { id: 4, icon: <Javascript /> },
-  { id: 5, icon: <Figma /> },
-  { id: 6, icon: <Tailwind /> },
-  { id: 7, icon: null },
-  { id: 8, icon: null },
-  { id: 9, icon: null },
-  { id: 10, icon: null },
-  { id: 11, icon: null },
-  { id: 12, icon: null },
-  { id: 13, icon: null },
-  { id: 14, icon: null },
-  { id: 15, icon: null },
-  { id: 16, icon: null },
-  { id: 17, icon: null, },
-  { id: 18, icon: null },
-  { id: 19, icon: null },
-  { id: 20, icon: null },
-]
+import Users from '../icons/Users'
+import Sparkle from '../icons/Sparkle'
+import Chart from '../icons/Chart'
+import Sig from '../icons/Sig'
+import JsBlack from '../icons/JsBlack'
+import RailsBlack from '../icons/RailsBlack'
+import TailwindBlack from '../icons/TailwindBlack'
+import Wave from '../icons/Wave'
 
 export default function Inventory() {
-  const [selectedItem, setSelectedItem] = useState(null)
+  const [isHovered, setIsHovered] = useState(false)
+  const handleHover = () => {
+    setIsHovered(true)
+  }
+  const handleLeave = () => {
+    setIsHovered(false)
+  }
   return (
-    <div 
-      id="Inventory" 
-      className="bg-landscape-inventory min-h-screen w-screen h-screen overflow-auto flex flex-col relative"
-    >
-      {/* Blurred background layer */}
+    <div className="min-h-screen h-auto sm:h-screen flex items-center justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
       <div 
-        className="absolute inset-0 w-full h-full"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          filter: 'blur(3px)',
-          transform: 'scale(1.1)',
-          zIndex: 0
-        }}
-      />
-      {/* Dark overlay layer */}
-      <div 
-        className="absolute inset-0 w-full h-full bg-gray-900 opacity-60"
-        style={{
-          zIndex: 1
-        }}
-      />
-      {/* Content layer - not blurred */}
-      <div className="flex-1 flex flex-row items-center justify-center pb-4 sm:pb-6 md:pb-0 relative z-10" style={{ filter: 'none' }}>
-        {/* Inventory Section */}
-        <div className="flex-1 flex flex-col items-center justify-center">
-          <div className="w-full flex flex-col items-center">
-            <Tab />
-          </div>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-1.5 sm:gap-2 px-2 sm:px-4 md:px-1 relative">
-            {inventoryItems.map((item) => (
-              <div key={item.id} className={tileBaseClasses}>
-                {item.icon}
-                {item.text && (
-                  <span className="text-xs sm:text-sm md:text-base">{item.text}</span>
-                )}
+        id="Inventory" 
+        className="grid grid-cols-1 xl:grid-cols-2 w-full mx-auto gap-3 sm:gap-4">
+          <div className="col-span-1 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div className="col-span-1 sm:col-span-2 card-bg p-6 md:p-10 rounded-xl flex gap-2 sm:gap-3 flex-col">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black">Naoi</h2>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl text-black font-bold">Managing contractor hiring, workflows, and engagement in one platform.</h1>
+              <p className="text-gray-500 text-sm sm:text-base md:text-lg font-bold">A collaborative system built for teams managing contract hiring, Naoi brings together all tools needed to handle the full contractor lifecycle.</p>
+            </div>
+            <div className="col-span-1 sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className='col-span-1 card-bg rounded-2xl flex gap-2 sm:gap-3 flex-col p-6 md:p-8'>
+                <div className='flex gap-3 sm:gap-5'>
+                  <Users />
+                  <p className='text-black text-base sm:text-lg font-bold'>Users</p>
+                </div>
+                <p className='text-gray-500 text-sm sm:text-base md:text-lg font-bold'>Supports tiered billing and client-specific plans with automated access control.</p>
               </div>
-            ))}
+              <div className='col-span-1 card-bg rounded-2xl flex gap-2 sm:gap-3 flex-col p-6 md:p-8'>
+                <div className='flex gap-3 sm:gap-5'>
+                  <Sparkle />
+                  <p className='text-black text-base sm:text-lg font-bold'>Subscription Plan</p>
+                </div>
+                <p className='text-gray-500 text-sm sm:text-base md:text-lg font-bold'>Supports tiered billing and client-specific plans with automated access control.</p>
+              </div>
+              <div className='col-span-1 card-bg rounded-2xl flex gap-2 sm:gap-3 flex-col p-6 md:p-8'>
+                <div className='flex gap-3 sm:gap-5'>
+                  <Sig />
+                  <p className='text-black text-base sm:text-lg font-bold'>Electric Signature</p>
+                </div>
+                <p className='text-gray-500 text-sm sm:text-base md:text-lg font-bold'>signing flow for contracts and renewals.</p>
+              </div>
+              <div className='col-span-1 card-bg rounded-2xl flex gap-2 sm:gap-3 flex-col p-6 md:p-8'>
+                <div className='flex gap-3 sm:gap-5'>
+                  <Chart />
+                  <p className='text-black text-base sm:text-lg font-bold'>Admin Dashboard</p>
+                </div>
+                <p className='text-gray-500 text-sm sm:text-base md:text-lg font-bold'>Gives admins full visibility into contractors, jobs, timesheets, and activity.</p>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        {/* SVG Image - Right side centered */}
-        <div className="hidden md:flex flex-col items-center justify-between flex-1 px-4">
-          
-        </div>
+          <div onMouseEnter={handleHover} onMouseLeave={handleLeave} className="col-span-1 card-bg rounded-2xl overflow-hidden">
+            <div className='relative flex flex-col p-2 sm:p-4 h-full hover:scale-101 cursor-pointer transition-all duration-200'>
+              <div className='w-full overflow-x-auto  overflow-y-hidden flex items-start gap-2 sm:gap-3 hide-scrollbar'>
+                <div className='shrink-0 w-full max-w-full flex flex-col'>
+                  <video
+                      src="/media/onboarding1.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="rounded-t-2xl w-full"
+                    />
+                  <div className='flex flex-col px-4 sm:px-6 md:px-10 gap-2 sm:gap-3 bg-white pt-2 sm:pt-3'>
+                    <h2 className='text-lg sm:text-xl md:text-2xl font-bold text-black'>Worker onboarding</h2>
+                    <span className='text-gray-500 text-sm sm:text-base font-bold w-full sm:w-1/2'>Worker sets up their account, and the system links them to the job so the company can continue the hiring process.</span>
+                  </div>
+                </div>
+                <div className='shrink-0 w-full max-w-full flex flex-col'>
+                  <img src="/media/hiring1.png" alt="hiring" className="rounded-t-2xl shrink-0 w-full max-w-full" />
+                  <div className='flex flex-col px-4 sm:px-6 md:px-10 gap-2 sm:gap-3 bg-white pt-2 sm:pt-3'>
+                    <h2 className='text-lg sm:text-xl md:text-2xl font-bold text-black'>Hiring</h2>
+                    <span className='text-gray-500 text-sm sm:text-base font-bold w-full sm:w-1/2'>Worker sets up their account, and the system links them to the job so the company can continue the hiring process.</span>
+                  </div>
+                </div>
+                <div className='shrink-0 w-full max-w-full flex flex-col'>
+                  <video
+                  src="/media/timesheet.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="rounded-t-2xl shrink-0 w-full max-w-full"
+                  />
+                  <div className='flex flex-col px-4 sm:px-6  md:px-10 gap-2 sm:gap-3 bg-white pb-4 pt-2 sm:pt-3'>
+                    <h2 className='text-lg sm:text-xl md:text-2xl font-bold text-black'>Timesheet</h2>
+                    <span className='text-gray-500 text-sm sm:text-base font-bold w-full sm:w-1/2'>Worker sets up their account, and the system links them to the job so the company can continue the hiring process.</span>
+                  </div>
+                </div>
+              </div>
+              <div className='bg-white relative rounded-b-2xl w-full pl-4 sm:pl-6 md:pl-10 flex pt-2 sm:pt-3 items-center flex-1 min-h-[120px] sm:min-h-[150px]'>
+                <Wave show={isHovered} />
+                <div className='flex gap-2 sm:gap-3 items-center'>  
+                  <RailsBlack />
+                  <JsBlack />
+                  <TailwindBlack />
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   )

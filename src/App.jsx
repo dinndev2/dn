@@ -9,10 +9,10 @@ function App() {
 
   return (
     <>
-      <Tab/>
+      {/* <Tab/> */}
       <MainContent/>
       <Inventory/>
-      <Bar/>
+      {/* <Bar/> */}
     </>
   )
 }
