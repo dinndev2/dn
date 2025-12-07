@@ -1,6 +1,14 @@
 import Gem from './icons/Gem'
 import Line from './icons/Line'
+
 export default function Hero () {
+  const scrollToInventory = () => {
+    const inventoryElement = document.getElementById('Inventory')
+    if (inventoryElement) {
+      inventoryElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <div id="hero" className="h-screen flex flex-col items-center justify-center gap-4">
       <h3 className="text-xl sm:text-2xl md:text-3xl text-gray-900 font-bold text-center animate-fade-in-up" style={{animationDelay: '0.1s'}}>Hello, I'm Aladin <br/> Penagunda </h3>
@@ -13,7 +21,10 @@ export default function Hero () {
           A developer who loves learning, building, and refining products into clean, thoughtful experiences while constantly improving my craft.
         </p>
       </div>
-      <a href="mailto:dinndev@gmail.com" className="bg-black hover:bg-gray-800 trnasition-all text-white px-4 py-2 rounded-full animate-fade-in-up" style={{animationDelay: '0.5s'}}>Contact me</a>
+      <div className="flex gap-4 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+        <a href="#Inventory" onClick={(e) => { e.preventDefault(); scrollToInventory(); }} className="bg-black hover:bg-gray-800 transition-all text-white px-4 py-2 rounded-full">View Projects</a>
+        <a href="mailto:dinndev@gmail.com" className="bg-white hover:bg-gray-100 border border-black transition-all text-black px-4 py-2 rounded-full">Contact me</a>
+      </div>
     </div>
   )
 }

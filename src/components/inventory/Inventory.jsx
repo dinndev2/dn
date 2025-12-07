@@ -34,7 +34,7 @@ const carouselItems = [
   }
 ]
 
-export default function Inventory() {
+export default function Inventory({ setIsHome }) {
   const [isHovered, setIsHovered] = useState(false)
   const [isManuallyScrolling, setIsManuallyScrolling] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
@@ -234,7 +234,7 @@ export default function Inventory() {
                 </div>
               </div>
             </div>
-            <div onMouseEnter={handleHover} onMouseLeave={handleLeave} className={`col-span-1 card-bg rounded-2xl overflow-hidden ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={isVisible ? {animationDelay: '0.3s'} : {}}>
+            <div onClick={() => setIsHome(false)} onMouseEnter={handleHover} onMouseLeave={handleLeave} className={`col-span-1 card-bg rounded-2xl overflow-hidden ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={isVisible ? {animationDelay: '0.3s'} : {}}>
               <div className='relative flex flex-col p-2 sm:p-4 h-full hover:scale-101 cursor-pointer transition-all duration-200'>
                 <div 
                   ref={scrollContainerRef}
