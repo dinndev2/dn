@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary-color: #6C9B88;
   --secondary-color: #ADA9A0;
@@ -169,4 +173,21 @@ body {
     padding: 17px;
     border-radius: 20px;
   }
+}
+
+/* ─── HERO ANIMATION ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
 }

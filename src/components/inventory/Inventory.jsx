@@ -8,6 +8,7 @@ import RailsBlack from '../icons/RailsBlack'
 import TailwindBlack from '../icons/TailwindBlack'
 import Wave from '../icons/Wave'
 import Divider from '../Divider'
+import PersonalProjects from '../PersonalProjects'
 
 const carouselItems = [
   {
@@ -36,8 +37,10 @@ const carouselItems = [
 export default function Inventory() {
   const [isHovered, setIsHovered] = useState(false)
   const [isManuallyScrolling, setIsManuallyScrolling] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
   const scrollContainerRef = useRef(null)
   const manualScrollTimeoutRef = useRef(null)
+  const inventoryRef = useRef(null)
 
   const handleHover = () => {
     setIsHovered(true)
@@ -156,21 +159,51 @@ export default function Inventory() {
     }
   }, [isHovered])
 
+  // Intersection Observer for scroll-triggered animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+          }
+        })
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+        rootMargin: '0px 0px -50px 0px' // Trigger slightly before fully in view
+      }
+    )
+
+    if (inventoryRef.current) {
+      observer.observe(inventoryRef.current)
+    }
+
+    return () => {
+      if (inventoryRef.current) {
+        observer.unobserve(inventoryRef.current)
+      }
+    }
+  }, [])
+
 
   return (
-    <> 
-      <Divider />
-      <div className="min-h-screen h-auto sm:h-screen flex items-center justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+    <div 
+    ref={inventoryRef}
+    id="Inventory" 
+    className="flex items-center justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6"> 
+      <div>
+        <Divider />
         <div 
-          id="Inventory" 
+          ref={inventoryRef}
           className="grid grid-cols-1 xl:grid-cols-2 w-full mx-auto gap-3 sm:gap-4">
             <div className="col-span-1 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-              <div className="col-span-1 sm:col-span-2 card-bg p-6 md:p-10 rounded-xl flex gap-2 sm:gap-3 flex-col">
+              <div className={`col-span-1 sm:col-span-2 card-bg p-6 md:p-10 rounded-xl flex gap-2 sm:gap-3 flex-col ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={isVisible ? {animationDelay: '0.1s'} : {}}>
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black">Naoi</h2>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl text-black font-bold">Managing contractor hiring, workflows, and engagement in one platform.</h1>
                 <p className="text-gray-500 text-sm sm:text-base md:text-lg font-bold">A collaborative system built for teams managing contract hiring, Naoi brings together all tools needed to handle the full contractor lifecycle.</p>
               </div>
-              <div className="col-span-1 sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className={`col-span-1 sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={isVisible ? {animationDelay: '0.2s'} : {}}>
                 <div className='col-span-1 card-bg rounded-2xl flex gap-2 sm:gap-3 flex-col p-6 md:p-8'>
                   <div className='flex gap-3 sm:gap-5'>
                     <Users />
@@ -201,7 +234,7 @@ export default function Inventory() {
                 </div>
               </div>
             </div>
-            <div onMouseEnter={handleHover} onMouseLeave={handleLeave} className="col-span-1 card-bg rounded-2xl overflow-hidden">
+            <div onMouseEnter={handleHover} onMouseLeave={handleLeave} className={`col-span-1 card-bg rounded-2xl overflow-hidden ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={isVisible ? {animationDelay: '0.3s'} : {}}>
               <div className='relative flex flex-col p-2 sm:p-4 h-full hover:scale-101 cursor-pointer transition-all duration-200'>
                 <div 
                   ref={scrollContainerRef}
@@ -261,7 +294,8 @@ export default function Inventory() {
               </div>
             </div>
         </div>
+        <PersonalProjects />
       </div>
-    </>
+    </div>
   )
 }

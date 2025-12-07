@@ -2,8 +2,10 @@ import Dinndev from '../icons/Dinndev'
 
 export default function Tab() {
   return (
-    <div className="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 flex gap-4 sm:gap-8 md:gap-10 items-center justify-center w-48 sm:w-56 md:w-64 max-w-2xl px-4 py-2 sm:py-4 z-50">
+    <div style={{animationDelay: '0.1s'}} className="fixed top-0 bg-white/80 backdrop-blur-md w-screen left-1/2 -translate-x-1/2 flex gap-4 sm:gap-6 md:gap-10 items-center justify-center px-4 py-2 sm:py-4 z-50">
+      <a href="#Inventory" className="text-gray-600 font-bold hover:text-gray-950 transition-colors animate-fade-in-up"> Projects </a>
       <Dinndev />
+      <a href="mailto:dinndev@gmail.com" className="text-gray-600 font-bold hover:text-gray-950 transition-colors animate-fade-in-up"> Contact</a>
     </div>
   );
 }
