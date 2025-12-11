@@ -1,6 +1,6 @@
-export default function JavaScript() {
+export default function JavaScript({ className = "" }) {
   return (
-    <svg width="50px" height="50px" xmlns="http://www.w3.org/2000/svg"
+    <svg className={className} xmlns="http://www.w3.org/2000/svg"
       aria-label="JavaScript" role="img"
       viewBox="0 0 512 512">
       <rect

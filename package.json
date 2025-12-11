@@ -1,5 +1,5 @@
 {
-  "name": "dn",
+  "name": "dev",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,6 +13,8 @@
   "dependencies": {
     "@react-pdf/renderer": "^4.3.1",
     "@tailwindcss/vite": "^4.1.17",
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
     "motion": "^12.23.25",
     "nanoid": "^5.1.6",
     "react": "^19.2.0",

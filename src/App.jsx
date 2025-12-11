@@ -1,4 +1,5 @@
 import { useState, useEffect} from 'react'
+import { AnimatePresence } from 'motion/react'
 import './App.css'
 import Bar from './components/navigation/Bar'
 import Tab from './components/navigation/Tab'
@@ -6,11 +7,13 @@ import MainContent from './components/MainContent'
 import Inventory from './components/inventory/Inventory'
 import OnboardingForm from './components/OnboardingForm'
 import LoadingSpinner from './components/LoadingSpinner'
+import Question from './components/Question'
 
 function App() {
   const [isHome, setIsHome] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
   const [isTransitioning, setIsTransitioning] = useState(false)
+  const [isQuestionOpen, setIsQuestionOpen] = useState(false)
   
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 100);
@@ -35,6 +38,12 @@ function App() {
       <>
         <MainContent/>
         <Inventory setIsHome={setIsHome}/>
+        <AnimatePresence>
+          {isQuestionOpen && (
+            <Question isQuestionOpen={isQuestionOpen} setIsQuestionOpen={setIsQuestionOpen} />
+          )}
+        </AnimatePresence>
+        <Bar isQuestionOpen={isQuestionOpen} setIsQuestionOpen={setIsQuestionOpen} />
       </>
     ) : (
       <OnboardingForm/>

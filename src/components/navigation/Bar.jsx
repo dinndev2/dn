@@ -3,9 +3,11 @@ import Projects from "../icons/Projects";
 import CodeWars from "../icons/CodeWars";
 import Github from "../icons/Github";
 import LinkedIn from "../icons/LinkedIn";
+import { motion } from 'motion/react';
+import Plane from "../icons/Plane";
 import X from "../icons/X";
 
-export default function Bar() {
+export default function Bar({ setIsQuestionOpen }) {
   useEffect(() => {
     const icons = document.querySelectorAll('.icon');
     const dock = document.getElementById('dock');
@@ -51,8 +53,8 @@ export default function Bar() {
   }, []);
   return (
     <div className="dock-wrapper">
-      <div id="dock" className="flex gap-2 md:gap-4 lg:gap-6 relative items-center justify-center" style={{ overflow: 'visible' }}>
-        <a className="icon glass-background px-1.5 sm:px-2 rounded-lg py-0.5 sm:py-1 secondary-color fill-current h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10 relative group flex items-center justify-center" href="#">
+      <div id="dock" className="flex gap-4 lg:gap-6 relative items-center justify-center" style={{ overflow: 'visible' }}>
+        <a className="icon glass-background px-1.5 sm:px-2 rounded-lg py-0.5 sm:py-1 secondary-color fill-current h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10 relative group flex items-center justify-center" href="#Inventory">
           <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             Projects
           </span>
@@ -83,6 +85,19 @@ export default function Bar() {
           </span>
           <X/>
         </a>
+        <motion.button 
+          onClick={() => setIsQuestionOpen(true)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="group cursor-pointer hover:bg-black/90 active:bg-black transition-all duration-300 flex items-center justify-center rounded-full px-2 py-1.5 bg-black gap-2 shadow-lg hover:shadow-xl z-40 border border-black/10"
+        >
+          <span className="text-sm sm:text-base font-medium text-white whitespace-nowrap">
+            Ask <span className="font-black">Din!</span>
+          </span>
+          <div className="shrink-0">
+            <Plane className="w-4 h-4 sm:w-4 sm:h-4 text-white group-hover:translate-x-0.5 transition-transform duration-300" />
+          </div>
+        </motion.button>
       </div>
     </div>
   );
