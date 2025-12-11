@@ -62,7 +62,7 @@ export default function Question ({ isQuestionOpen, setIsQuestionOpen }) {
     setIsLoading(true)
     setAnswer("")
     
-    axios.post(`${url}/question`, {question: q})
+    axios.post(`${url}/questions/ask`, {question: q})
     .then(res => {
       console.log(res.data)
       setAnswer(res.data.answer)

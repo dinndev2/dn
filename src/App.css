@@ -216,7 +216,6 @@ body {
   transition: all 0.2s ease-in-out;
   padding: 10px;
   border-radius: 16px;
-
   background: rgba(255, 255, 255, 0.12); /* subtle milk tint */
   backdrop-filter: saturate(180%) blur(30px);
   -webkit-backdrop-filter: saturate(180%) blur(30px);
