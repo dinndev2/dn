@@ -76,7 +76,7 @@ export default function Question ({ isQuestionOpen, setIsQuestionOpen }) {
     })
   }
   
-  const defaultQuestions = ["Where did Din study computer programming", "What's the skills of din", "What's the previous project of Din"]
+  const defaultQuestions = ["Where did Din study computer programming", "What's the skills of din", "give me a brief summary of din's resume"]
   
   return (
       <>
