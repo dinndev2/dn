@@ -147,7 +147,7 @@ body {
 
 .glass-background {
   background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: saturate(180%) blur(30px);
+  backdrop-filter: saturate(180%) blur(30px) !important;
   -webkit-backdrop-filter: saturate(180%) blur(30px);
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: inset 0 0 0 0.6px rgba(255, 255, 255, 0.5), 0 20px 40px rgba(0, 0, 0, 0.25);
@@ -217,7 +217,7 @@ body {
   padding: 10px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.12); /* subtle milk tint */
-  backdrop-filter: saturate(180%) blur(30px);
+  backdrop-filter: saturate(180%) blur(30px) !important;
   -webkit-backdrop-filter: saturate(180%) blur(30px);
 
   border: 1px solid rgba(255, 255, 255, 0.25);

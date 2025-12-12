@@ -4,7 +4,7 @@ import GithubLogo from './icons/GithubLogo'
 import JsBlack from './icons/JsBlack'
 export default function Timeline() {
   return (
-    <div className="w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+    <div className="mb-20 w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
       <div className="w-full max-w-2xl mx-auto flex flex-col items-center">
         <div className="mb-6 sm:mb-8 text-center">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-2">Timeline</h1>
