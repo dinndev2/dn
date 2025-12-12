@@ -8,6 +8,7 @@ import Inventory from './components/inventory/Inventory'
 import OnboardingForm from './components/OnboardingForm'
 import LoadingSpinner from './components/LoadingSpinner'
 import Question from './components/Question'
+import Timeline from './components/Timeline'
 
 function App() {
   const [isHome, setIsHome] = useState(true)
@@ -44,6 +45,7 @@ function App() {
           )}
         </AnimatePresence>
         <Bar isQuestionOpen={isQuestionOpen} setIsQuestionOpen={setIsQuestionOpen} />
+        <Timeline />
       </>
     ) : (
       <OnboardingForm/>

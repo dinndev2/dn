@@ -88,7 +88,7 @@ export default function Question ({ isQuestionOpen, setIsQuestionOpen }) {
           transition={{ duration: 0.3, ease: "easeOut" }} 
           className="bottom-24 sm:bottom-28 md:bottom-32 left-1/2 -translate-x-1/2 fixed gap-3 w-full md:max-w-2xl bg-white rounded-xl p-4 sm:p-6 shadow-2xl z-50"
         >
-          <h3 className="text-lg sm:text-xl text-black"> Ask <span className="text-black font-black">Din!</span> </h3>
+          <h3 className="text-lg sm:text-xl text-black flex items-center gap-3"> Ask <span className="text-black font-black">Din!</span>  <span className="text-blue-500 font-semibold text-xs sm:text-sm"> (First question might take a while to respond )</span> </h3>
           <span className="text-gray-500 text-xs sm:text-sm"> I'm created by din to answer your questions about him. I was created with the help of AI and the data from his resume. </span>
           <p className="font-semibold text-xs text-black mt-4 sm:mt-5"> Frequently Asked Questions</p>
           <div className="flex flex-wrap gap-2 mt-2"> 
