@@ -6,13 +6,25 @@ import Plane from './icons/Plane'
 
 export default function Question ({ isQuestionOpen, setIsQuestionOpen }) {
   const [question, setQuestion] = useState("")
+  const [isWakingUp, setIsWakingUp] = useState(false)
   const url = import.meta.env.VITE_API_URL
   const [answer, setAnswer] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const questionRef = useRef(null)
-
+  const wakeRender = () => {
+    axios.get(`${url}`).then(res => {
+      console.log('din is now waking up....')
+      setIsWakingUp(true)
+    }).catch(err => {
+      console.log(err)
+      setIsWakingUp(false)
+    })
+  }
   // Handle click outside to close
   useEffect(() => {
+    if (!isWakingUp) {
+      wakeRender()
+    }
     const handleClickOutside = (event) => {
       if (isQuestionOpen && questionRef.current && !questionRef.current.contains(event.target)) {
         // Check if click is not on the button that opens the question (in the dock)
