@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import Plane from './icons/Plane'
 
 export default function Question ({ isQuestionOpen, setIsQuestionOpen }) {
+  console.log('isWakingUp', isWakingUp)
   const [question, setQuestion] = useState("")
   const [isWakingUp, setIsWakingUp] = useState(false)
   const url = import.meta.env.VITE_API_URL

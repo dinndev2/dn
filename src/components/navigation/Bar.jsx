@@ -60,7 +60,7 @@ export default function Bar({ setIsQuestionOpen }) {
           </span>
           <Projects/>
         </a>
-        <a className="icon secondary-color fill-current h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative group flex items-center justify-center" target="_blank" href="https://www.codewars.com/users/dinndev2">
+        <a className="icon secondary-color fill-current h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative group flex items-center justify-center" target="_blank" href="https://www.codewars.com/users/dinndev">
           <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             CodeWars
           </span>
