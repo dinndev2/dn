@@ -20,6 +20,19 @@ function ErrorFallback({ error, resetErrorBoundary }) {
 }
 
 const ErrorBoundary = ({ children, fallback }) => {
+  // Check if fallback is JSX (React element) or a component function
+  const isJSX = fallback && typeof fallback !== 'function' && fallback.$$typeof
+  
+  if (isJSX) {
+    // Use fallback prop for JSX
+    return (
+      <ReactErrorBoundary fallback={fallback}>
+        {children}
+      </ReactErrorBoundary>
+    )
+  }
+  
+  // Use FallbackComponent prop for component functions
   return (
     <ReactErrorBoundary FallbackComponent={fallback || ErrorFallback}>
       {children}

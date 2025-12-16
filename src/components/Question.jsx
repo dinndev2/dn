@@ -5,22 +5,13 @@ import { AnimatePresence, motion } from 'motion/react'
 import Plane from './icons/Plane'
 
 export default function Question ({ isQuestionOpen, setIsQuestionOpen }) {
-  console.log('isWakingUp', isWakingUp)
   const [question, setQuestion] = useState("")
   const [isWakingUp, setIsWakingUp] = useState(false)
   const url = import.meta.env.VITE_API_URL
   const [answer, setAnswer] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const questionRef = useRef(null)
-  const wakeRender = () => {
-    axios.get(`${url}`).then(res => {
-      console.log('din is now waking up....')
-      setIsWakingUp(true)
-    }).catch(err => {
-      console.log(err)
-      setIsWakingUp(false)
-    })
-  }
+
   // Handle click outside to close
   useEffect(() => {
     if (!isWakingUp) {
@@ -48,6 +39,16 @@ export default function Question ({ isQuestionOpen, setIsQuestionOpen }) {
       }
     }
   }, [isQuestionOpen, setIsQuestionOpen])
+
+  const wakeRender = () => {
+    axios.get(`${url}`).then(res => {
+      console.log('din is now waking up....')
+      setIsWakingUp(true)
+    }).catch(err => {
+      console.log(err)
+      setIsWakingUp(false)
+    })
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
