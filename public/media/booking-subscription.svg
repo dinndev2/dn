@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" fill="none">
+  <rect width="1200" height="680" fill="#909090"/>
+  <rect x="40" y="40" width="1120" height="600" rx="28" fill="#F4F4F5" stroke="#D4D4D8" stroke-width="2"/>
+  <text x="78" y="118" fill="#0F172A" font-family="Arial, sans-serif" font-size="54" font-weight="700">Subscription</text>
+  <text x="78" y="166" fill="#64748B" font-family="Arial, sans-serif" font-size="26">Choose a plan that fits your team.</text>
+
+  <rect x="80" y="220" width="500" height="360" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="120" y="286" fill="#0F172A" font-family="Arial, sans-serif" font-size="44" font-weight="700">Free</text>
+  <text x="500" y="286" fill="#0F172A" font-family="Arial, sans-serif" font-size="44" font-weight="700">$0</text>
+  <text x="120" y="338" fill="#64748B" font-family="Arial, sans-serif" font-size="25">For getting started.</text>
+  <circle cx="126" cy="392" r="6" fill="#CBD5E1"/>
+  <text x="146" y="400" fill="#475569" font-family="Arial, sans-serif" font-size="22">1 business</text>
+  <circle cx="126" cy="440" r="6" fill="#CBD5E1"/>
+  <text x="146" y="448" fill="#475569" font-family="Arial, sans-serif" font-size="22">Basic bookings and services</text>
+  <rect x="120" y="488" width="420" height="72" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+  <text x="260" y="535" fill="#334155" font-family="Arial, sans-serif" font-size="24" font-weight="600">Current plan</text>
+
+  <rect x="620" y="220" width="500" height="360" rx="24" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+  <rect x="620" y="220" width="500" height="12" rx="6" fill="url(#planGradient)"/>
+  <text x="660" y="286" fill="#0F172A" font-family="Arial, sans-serif" font-size="44" font-weight="700">Pro</text>
+  <text x="995" y="286" fill="#0F172A" font-family="Arial, sans-serif" font-size="44" font-weight="700">$1/mo</text>
+  <text x="660" y="338" fill="#64748B" font-family="Arial, sans-serif" font-size="25">For growing teams.</text>
+  <circle cx="666" cy="392" r="6" fill="#CBD5E1"/>
+  <text x="686" y="400" fill="#475569" font-family="Arial, sans-serif" font-size="22">Add more businesses</text>
+  <circle cx="666" cy="440" r="6" fill="#CBD5E1"/>
+  <text x="686" y="448" fill="#475569" font-family="Arial, sans-serif" font-size="22">Priority support</text>
+  <rect x="660" y="486" width="420" height="76" rx="18" fill="#0B1732"/>
+  <text x="788" y="536" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Upgrade to Pro</text>
+
+  <defs>
+    <linearGradient id="planGradient" x1="620" y1="220" x2="1120" y2="220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+  </defs>
+</svg>

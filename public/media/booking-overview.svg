@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" fill="none">
+  <rect width="1200" height="680" fill="#F8FAFC"/>
+  <rect x="0" y="0" width="220" height="680" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="30" y="56" fill="#0F172A" font-family="Arial, sans-serif" font-size="24" font-weight="700">Tamara Workspace</text>
+  <text x="30" y="82" fill="#64748B" font-family="Arial, sans-serif" font-size="16">Workspace</text>
+  <text x="30" y="144" fill="#334155" font-family="Arial, sans-serif" font-size="26" font-weight="700">Home</text>
+  <text x="30" y="196" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18" font-weight="700">BUSINESSES</text>
+  <rect x="16" y="232" width="188" height="50" rx="10" fill="#0B1732"/>
+  <text x="32" y="265" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="24" font-weight="700">Information</text>
+  <text x="30" y="332" fill="#334155" font-family="Arial, sans-serif" font-size="22" font-weight="600">Bookings</text>
+  <text x="30" y="382" fill="#334155" font-family="Arial, sans-serif" font-size="22" font-weight="600">Services</text>
+  <rect x="14" y="442" width="190" height="44" rx="10" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="52" y="470" fill="#334155" font-family="Arial, sans-serif" font-size="22" font-weight="700">Add business</text>
+
+  <rect x="220" y="0" width="980" height="58" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="250" y="38" fill="#0F172A" font-family="Arial, sans-serif" font-size="20" font-weight="700">Tamara V</text>
+  <rect x="1020" y="14" width="120" height="30" rx="10" fill="#F8FAFC" stroke="#CBD5E1"/>
+
+  <text x="270" y="120" fill="#0F172A" font-family="Arial, sans-serif" font-size="46" font-weight="700">Skyline Bowling &amp; Lounge</text>
+  <text x="270" y="156" fill="#475569" font-family="Arial, sans-serif" font-size="28">https://www.bowlero.com</text>
+
+  <rect x="260" y="184" width="570" height="120" rx="16" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="280" y="224" fill="#0F172A" font-family="Arial, sans-serif" font-size="32" font-weight="700">About</text>
+  <text x="280" y="266" fill="#475569" font-family="Arial, sans-serif" font-size="24">A clear business profile with service and booking controls.</text>
+
+  <rect x="850" y="184" width="320" height="156" rx="16" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="872" y="224" fill="#0F172A" font-family="Arial, sans-serif" font-size="32" font-weight="700">Overview</text>
+  <text x="872" y="268" fill="#334155" font-family="Arial, sans-serif" font-size="26">Services</text>
+  <text x="1120" y="268" fill="#0F172A" font-family="Arial, sans-serif" font-size="30" font-weight="700">4</text>
+  <text x="872" y="306" fill="#334155" font-family="Arial, sans-serif" font-size="26">Bookings</text>
+  <text x="1120" y="306" fill="#0F172A" font-family="Arial, sans-serif" font-size="30" font-weight="700">5</text>
+
+  <rect x="260" y="320" width="570" height="190" rx="16" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="280" y="360" fill="#0F172A" font-family="Arial, sans-serif" font-size="32" font-weight="700">Details</text>
+  <text x="280" y="402" fill="#64748B" font-family="Arial, sans-serif" font-size="22">Workspace</text>
+  <text x="280" y="434" fill="#0F172A" font-family="Arial, sans-serif" font-size="28" font-weight="700">Tamara V Workspace</text>
+  <text x="280" y="474" fill="#64748B" font-family="Arial, sans-serif" font-size="22">Website</text>
+  <text x="280" y="504" fill="#0F172A" font-family="Arial, sans-serif" font-size="28" font-weight="700">https://www.bowlero.com</text>
+
+  <rect x="980" y="100" width="84" height="34" rx="10" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="1001" y="123" fill="#334155" font-family="Arial, sans-serif" font-size="19" font-weight="700">Services</text>
+  <rect x="1070" y="100" width="90" height="34" rx="10" fill="#0B1732"/>
+  <text x="1093" y="123" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="19" font-weight="700">Bookings</text>
+</svg>
