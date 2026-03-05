@@ -9,11 +9,15 @@ import X from "../icons/X";
 
 export default function Bar({ setIsQuestionOpen }) {
   useEffect(() => {
-    const icons = document.querySelectorAll('.icon');
     const dock = document.getElementById('dock');
     const dockWrapper = document.querySelector('.dock-wrapper');
-    
-    if (!dock) return; // Safety check
+
+    if (!dock || !dockWrapper) return;
+
+    const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!supportsHover) return;
+
+    const icons = dock.querySelectorAll('.icon');
     
     const handleMouseMove = (event) => {
       icons.forEach(icon => {
@@ -53,33 +57,33 @@ export default function Bar({ setIsQuestionOpen }) {
   }, []);
   return (
     <div className="dock-wrapper">
-      <div id="dock" className="flex gap-4 lg:gap-6 relative items-center justify-center" style={{ overflow: 'visible' }}>
+      <div id="dock" className="dock-row flex gap-4 lg:gap-6 relative items-center justify-center" style={{ overflow: 'visible' }}>
         <a className="icon glass-background px-1.5 sm:px-2 rounded-lg py-0.5 sm:py-1 secondary-color fill-current h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10 relative group flex items-center justify-center" href="#Inventory">
           <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             Projects
           </span>
           <Projects/>
         </a>
-        <a className="icon secondary-color fill-current h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative group flex items-center justify-center" target="_blank" href="https://www.codewars.com/users/dinndev">
+        <a className="icon secondary-color fill-current h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative group flex items-center justify-center" target="_blank" rel="noopener noreferrer" href="https://www.codewars.com/users/dinndev">
           <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             CodeWars
           </span>
           <CodeWars/>
         </a>
         <div className="w-0.5 sm:w-1 rounded-full bg-gray-400 opacity-10 self-stretch"></div>
-        <a className="icon secondary-color fill-current h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative group flex items-center justify-center" target="_blank" href="https://github.com/dinndev2">
+        <a className="icon secondary-color fill-current h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative group flex items-center justify-center" target="_blank" rel="noopener noreferrer" href="https://github.com/dinndev2">
           <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             Github
           </span>
           <Github/>
         </a>
-        <a className="icon secondary-color fill-current h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative group flex items-center justify-center" target="_blank" href="https://www.linkedin.com/in/aladin-penagunda-17020a198/">
+        <a className="icon secondary-color fill-current h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 relative group flex items-center justify-center" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/aladin-penagunda-17020a198/">
           <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             LinkedIn
           </span>
           <LinkedIn/>
         </a>
-        <a className="icon h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 secondary-color fill-current relative group flex items-center justify-center" target="_blank" href="https://x.com/dinndev2">
+        <a className="icon h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 secondary-color fill-current relative group flex items-center justify-center" target="_blank" rel="noopener noreferrer" href="https://x.com/dinndev2">
           <span className="tooltip-bubble absolute bottom-full mb-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs pointer-events-none whitespace-nowrap">
             X
           </span>
@@ -89,7 +93,7 @@ export default function Bar({ setIsQuestionOpen }) {
           onClick={() => setIsQuestionOpen(true)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="group cursor-pointer hover:bg-black/90 active:bg-black transition-all duration-300 flex items-center justify-center rounded-full px-2 py-1.5 bg-black gap-2 shadow-lg hover:shadow-xl z-40 border border-black/10"
+          className="group shrink-0 cursor-pointer hover:bg-black/90 active:bg-black transition-all duration-300 flex items-center justify-center rounded-full px-2 py-1.5 bg-black gap-2 shadow-lg hover:shadow-xl z-40 border border-black/10"
         >
           <span className="text-sm sm:text-base font-medium text-white whitespace-nowrap">
             Ask <span className="font-black">Din!</span>

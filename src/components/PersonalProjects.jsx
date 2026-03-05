@@ -22,14 +22,14 @@ const bookingWorkspaceFeatures = [
   {
     id: 'kanban',
     title: 'Kanban booking pipeline',
-    description: 'Move bookings across Created, In Progress, and Finished in real time.'
+    description: 'Move bookings across stages with live updates visible to all teammates in the same business.'
   }
 ]
 
 const bookingKanbanColumns = [
-  { id: 1, title: 'Created', count: 2, accent: 'bg-sky-500', summary: 'New bookings enter this lane for team assignment.' },
-  { id: 2, title: 'In Progress', count: 2, accent: 'bg-amber-500', summary: 'Active work stays visible until all requirements are done.' },
-  { id: 3, title: 'Finished', count: 1, accent: 'bg-emerald-500', summary: 'Completed bookings are closed and tracked for reporting.' }
+  { id: 1, title: 'Created', count: 2, accent: 'bg-sky-500', summary: 'New bookings appear instantly so the team can assign work right away.' },
+  { id: 2, title: 'In Progress', count: 2, accent: 'bg-amber-500', summary: 'Status changes sync live, keeping everyone aligned during execution.' },
+  { id: 3, title: 'Finished', count: 1, accent: 'bg-emerald-500', summary: 'Completed work updates in real time for accurate shared reporting.' }
 ]
 
 const bookingProjectScreenshots = [
@@ -49,8 +49,8 @@ const bookingProjectScreenshots = [
     src: '/media/booking-overview.png'
   },
   {
-    title: 'Kanban Booking Board',
-    summary: 'Drag-and-track booking cards from created to finished.',
+    title: 'Real-Time Kanban Booking Board',
+    summary: 'Move booking cards across stages with instant updates for all teammates in that business.',
     src: '/media/booking-kanban.png'
   }
 ]
@@ -188,7 +188,7 @@ export default function PersonalProjects() {
             <div className="rounded-xl border border-dashed border-gray-300 p-4">
               <p className="text-black text-sm sm:text-base font-bold">Built for service teams</p>
               <p className="text-gray-500 text-xs sm:text-sm font-semibold mt-1">
-                Includes workspace overview, settings, user management, and subscription upgrade flow.
+                Includes workspace overview, settings, user management, subscription upgrades, and real-time team collaboration.
               </p>
             </div>
           </div>
