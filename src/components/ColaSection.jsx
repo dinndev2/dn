@@ -155,6 +155,7 @@ export const ColaSection = () => {
       {/* --- HEADER --- */}
       <div className="flex-1 flex flex-col justify-center items-center text-center p-8 gap-6">
         <div className="flex flex-col items-center gap-2">
+
            <div className="bg-slate-900 text-[9px] font-black text-white px-4 py-1.5 rounded-full flex items-center gap-2 tracking-[0.2em] shadow-lg">
               <div className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
               SYSTEM_ACTIVE // STABLE
@@ -165,7 +166,7 @@ export const ColaSection = () => {
         </div>
         
         <p className="text-slate-500 max-w-lg text-sm lg:text-lg leading-relaxed font-medium">
-          A real-time workspace for teams to brainstorm using <span className="text-black font-bold">WebSockets</span> and <span className="text-black font-bold">Vector Interpolation</span>.
+          A real-time workspace for teams to brainstorm using <span className="text-black font-bold">WebSockets</span> and <span className="text-black font-bold">React</span>.
         </p>
 
         <a 
