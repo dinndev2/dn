@@ -9,7 +9,44 @@
   height: 20px;
 }
 
-  
+
+.cola-theme {
+  background: #FFF9F2;
+}
+
+.main-bg {
+  background: #0C1220;
+}
+.custom-card-border {
+  /* This creates a dashed border that follows the border-radius */
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='%23cbd5e1' stroke-width='4' stroke-dasharray='8%2c 8'/%3e%3c/svg%3e");
+  border-radius: 16px; /* Must match rx/ry in the SVG above */
+  background-color: #fffaf5; /* That slight off-white/warm tint in your image */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.krona-one-regular {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.krona-one-bold {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
 @theme {
   --animate-in: in 0.2s ease-in-out;
   @keyframes in {

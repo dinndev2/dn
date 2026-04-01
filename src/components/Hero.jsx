@@ -1,7 +1,6 @@
-import Gem from './icons/Gem'
 import Line from './icons/Line'
 
-export default function Hero () {
+export default function Hero() {
   const scrollToInventory = () => {
     const inventoryElement = document.getElementById('Inventory')
     if (inventoryElement) {
@@ -10,20 +9,71 @@ export default function Hero () {
   }
 
   return (
-    <div id="hero" className="h-screen flex flex-col items-center justify-center gap-4">
-      <h3 className="text-xl sm:text-2xl md:text-3xl text-gray-900 font-bold text-center animate-fade-in-up" style={{animationDelay: '0.1s'}}>Hello, I'm Aladin <br/> Penagunda </h3>
-      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 font-bold text-center animate-fade-in-up" style={{animationDelay: '0.2s'}}>A - software engineer</h1>
-      <div className="animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-        <Line />
-      </div>
-      <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 flex-wrap animate-fade-in-up" style={{animationDelay: '0.4s'}}>  
-        <p className="text-sm w-96 sm:text-base md:text-lg text-gray-600 text-center">
-          A developer who loves learning, building, and refining products into clean, thoughtful experiences while constantly improving my craft.
-        </p>
-      </div>
-      <div className="flex gap-4 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-        <a href="#Inventory" onClick={(e) => { e.preventDefault(); scrollToInventory(); }} className="bg-black hover:bg-gray-800 transition-all text-white px-4 py-2 rounded-full">View Projects</a>
-        <a href="mailto:dinndev@gmail.com" className="bg-white hover:bg-gray-100 border border-black transition-all text-black px-4 py-2 rounded-full">Contact me</a>
+    <div id="hero" className="krona-one-bold min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden bg-white text-gray-900 font-sans">
+      
+      {/* BACKGROUND DECOR - Subtle Grid/Dots to match the Canvas feel */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+           style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+
+      <div className="z-10 flex flex-col items-center gap-6 max-w-4xl">
+        
+        {/* TOP TAG - Matching the "SYSTEM_ACTIVE" style */}
+        <div className="animate-fade-in-down">
+          <div className="bg-slate-900 text-[10px] font-black text-white px-5 py-2 rounded-full flex items-center gap-3 tracking-[0.3em] shadow-2xl">
+            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+            ALADIN_PENAGUNDA // SR_DEV
+          </div>
+        </div>
+
+        {/* MAIN HEADLINE */}
+        <div className="flex flex-col items-center text-center gap-2">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-slate-900 uppercase italic leading-[0.9] animate-fade-in-up">
+            Software <br /> 
+            <span className="text-blue-600">Engineer</span>
+          </h1>
+          
+          <div className="w-full max-w-xs mt-4 opacity-20 animate-fade-in">
+            <Line />
+          </div>
+        </div>
+
+        {/* DESCRIPTION - Refined width and typography */}
+        <div className="flex flex-col items-center gap-6 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-slate-500 max-w-md text-center text-sm md:text-lg leading-relaxed font-medium">
+            Building high-performance <span className="text-black font-bold">real-time systems</span> and refining digital products into clean, buttery-smooth experiences.
+          </p>
+        </div>
+
+        {/* CTA BUTTONS - Matching the "Launch Demo" style */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <a 
+            href="#Inventory" 
+            onClick={(e) => { e.preventDefault(); scrollToInventory(); }} 
+            className="group relative inline-flex items-center gap-2 px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold text-xs uppercase tracking-widest transition-all hover:bg-slate-800 hover:scale-[1.03] active:scale-[0.97] shadow-xl shadow-slate-300"
+          >
+            View Projects
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
+          <a 
+            href="mailto:dinndev@gmail.com" 
+            className="px-8 py-4 bg-white border-2 border-slate-200 text-slate-900 rounded-2xl font-bold text-xs uppercase tracking-widest transition-all hover:bg-slate-50 hover:border-slate-900 shadow-sm"
+          >
+            Get In Touch
+          </a>
+        </div>
+
+        {/* MOCK METADATA FOOTER - Consistency check */}
+        <div className="mt-12 flex gap-8 items-center opacity-30 text-[9px] font-black uppercase tracking-[0.2em] animate-fade-in ">
+          <span>Loc: 14.57° N, 121.06° E</span>
+          <div className="w-1 h-1 bg-slate-400 rounded-full" />
+          <span>Status: Open to Collab</span>
+          <div className="w-1 h-1 bg-slate-400 rounded-full" />
+          <span>Stack: Ruby On Rails / React - Typescript </span>
+        </div>
+
       </div>
     </div>
   )

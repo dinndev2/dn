@@ -1,7 +1,6 @@
 import { useState, useEffect} from 'react'
 import { AnimatePresence } from 'motion/react'
 import './App.css'
-import Bar from './components/navigation/Bar'
 import Tab from './components/navigation/Tab'
 import MainContent from './components/MainContent'
 import Inventory from './components/inventory/Inventory'
@@ -9,12 +8,15 @@ import OnboardingForm from './components/OnboardingForm'
 import LoadingSpinner from './components/LoadingSpinner'
 import Question from './components/Question'
 import Timeline from './components/Timeline'
+import Hero from './components/Hero'
+import ProjectSeparator from './components/ProjectSeparator' 
+import TimelineSeparator from './components/TimelineSeparator'
+import PersonalProjects from './components/PersonalProjects'
 
 function App() {
   const [isHome, setIsHome] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
   const [isTransitioning, setIsTransitioning] = useState(false)
-  const [isQuestionOpen, setIsQuestionOpen] = useState(false)
   
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 100);
@@ -34,17 +36,13 @@ function App() {
   return ( 
     <>
     {(isLoading || isTransitioning) && <LoadingSpinner />}
-    <Tab setIsHome={setIsHome}/>
     {isHome ? (
       <>
-        <MainContent/>
+        <Hero/> 
+        <ProjectSeparator /> 
         <Inventory setIsHome={setIsHome}/>
-        <AnimatePresence>
-          {isQuestionOpen && (
-            <Question isQuestionOpen={isQuestionOpen} setIsQuestionOpen={setIsQuestionOpen} />
-          )}
-        </AnimatePresence>
-        <Bar isQuestionOpen={isQuestionOpen} setIsQuestionOpen={setIsQuestionOpen} />
+        <PersonalProjects />
+        <TimelineSeparator />
         <Timeline />
       </>
     ) : (
